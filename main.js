@@ -94,6 +94,15 @@ function displayResults(result) {
     RESULT.textContent = "Your BMI score is " + result + ". This means you are " + condition;
 }
 
+// Toggle button
+
+document.getElementById('modeToggle').addEventListener('click', toggleMode)
+
+function toggleMode () {
+    document.querySelector('body').classList.toggle('dark-mode')
+    document.getElementById('toggle-light').classList.toggle('active');
+    document.getElementById('toggle-dark').classList.toggle('active');
+}
 //The year for the footer
 
 YEAR.textContent = new Date().getFullYear();

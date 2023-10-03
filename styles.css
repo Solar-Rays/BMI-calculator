@@ -3,28 +3,47 @@
     margin: 0;
     padding: 0;
 }
+:root {
+    --primary-color: #EBFFDB;
+    --secondary-color: #2a2a2a;
+    --shadow: rgb(181, 180, 180)
+}
+
+.dark-mode {
+    --secondary-color: #EBFFDB;
+    --primary-color: #2a2a2a;
+    --shadow: rgba(109, 109, 109, 0.705);
+}
 
 body {
+    position: relative;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #EBFFDB;
+    background-color: var(--primary-color);
+    height: 100vh;
+    color: var(--secondary-color);
+}
+
+#holder {
+    position: relative;
+    min-height: 100%;
 }
 
 .container {
-    height: 90vh;
+    /* height: 90%; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     max-width: 1440px;
     margin: auto;
-    padding: 2rem;
+    padding: 4rem 2rem 6rem;
     gap: 3rem;
 }
 
 .bmi-calculator-card {
-    border: 2px solid #2A2A2A;
+    border: 2px solid var(--secondary-color);
     border-radius: 10px;
     height: fit-content;
     padding: 2rem 2rem 1rem;
-    box-shadow: 4px 8px 12px rgb(181, 180, 180);
+    box-shadow: 4px 8px 12px var(--shadow);
 }
 
 .weight-container p, .height-container p {
@@ -37,7 +56,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: .5rem 1rem;
-    border: 2px solid #2A2A2A;
+    border: 2px solid var(--secondary-color);
     border-radius: 10px;
     margin-bottom: 1.8rem;
 
@@ -52,7 +71,7 @@ input, select {
     border: none;
     padding: 0 .3rem;
     background-color: transparent;
-    color: #2A2A2A;
+    color: var(--secondary-color);
 }
 
 select {
@@ -67,8 +86,8 @@ select {
 }
 
 .calc-btn:hover {
-    background-color: #2A2A2A;
-    color: #EBFFDB;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .result {
@@ -87,9 +106,10 @@ select {
 }
 
 footer {
-    /* width: 100%; */
+    width: 100%;
+    position: absolute;
     text-align: center;
-    /* padding-bottom: 1rem; */
+    bottom: 0;
 }
 
 footer > p {
@@ -100,21 +120,53 @@ footer > p {
     color: red;
 }
 
-/* Dark mode  */
-
-.dark {
-    background-color: #2A2A2A;
-    color: #EBFFDB;
+.mode-toggle {
+    position: fixed;
+    right: .8rem;
+    bottom: .8rem;
+    padding: .2rem;
 }
 
-/* Light mode  */
+.toggle-button-container {
+    border: 2px solid var(--secondary-color);
+    display: flex;
+    border-radius: 10px;
+    background-color: #908f8f;
+}
 
+.toggle-light,
+.toggle-dark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    width: 40px;
+    height: 25px;
+    padding: 1.1rem;
+    border: 0;
+}
+
+.active {
+    background-color: #EBFFDB;
+}
 /* Mobile view  */
 
 @media screen and (max-width: 615px){
     .container {
         grid-template-columns: 1fr;
-        height: 95vh;
+    }
+
+    .bmi-information img, .bmi-information p {
+        width: 100%;
+    }
+
+    .mode-toggle {
+        bottom: .5rem;
+    }
+
+    .toggle-light,
+    .toggle-dark {
+        padding: .9rem;
     }
 
 }

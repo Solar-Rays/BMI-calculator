@@ -9,53 +9,71 @@
     <title>BMI Calculator</title>
 </head>
 
-<body>
-    <div class="container">
-        <div class="bmi-calculator-card">
-            <div class="weight-container">
-                <p>Weight: </p>
-                <div class="input-field">
-                    <input type="text" name="weight" id="weight" placeholder="Please input your weight">
-                    <select name="weight" id="weight-metric">
-                        <option value="kg">kg</option>
-                        <option value="lbs">lbs</option>
-                    </select>
+<body class="dark-mode">
+    <div id="holder">
+        <div class="container">
+            <div class="bmi-calculator-card">
+                <div class="weight-container">
+                    <p>Weight: </p>
+                    <div class="input-field">
+                        <input type="text" name="weight" id="weight" placeholder="Please input your weight">
+                        <select name="weight" id="weight-metric">
+                            <option value="kg">kg</option>
+                            <option value="lbs">lbs</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="height-container">
+                    <p>Height: </p>
+                    <div class="input-field">
+                        <input type="text" name="height" id="height" placeholder="Please input your height">
+                        <select name="height" id="height-metric">
+                            <option value="meters" selected>meter (m)</option>
+                            <option value="centimeters">centimeter (cm)</option>
+                            <option value="feet">foot (ft)</option>
+                            <option value="inches">inches (in)</option>
+                        </select>
+                    </div>
+                </div>
+                <p class="calc-btn" id="calc-btn">Calculate</p>
+                <div id="result">
                 </div>
             </div>
 
-            <div class="height-container">
-                <p>Height: </p>
-                <div class="input-field">
-                    <input type="text" name="height" id="height" placeholder="Please input your height">
-                    <select name="height" id="height-metric">
-                        <option value="meters" selected>meter (m)</option>
-                        <option value="centimeters">centimeter (cm)</option>
-                        <option value="feet">foot (ft)</option>
-                        <option value="inches">inches (in)</option>
-                    </select>
-                </div>
-            </div>
-            <p class="calc-btn" id="calc-btn">Calculate</p>
-            <div id="result">
+            <div class="bmi-information">
+                <img src="/resources/bmi-chart.jpg" alt="">
+                <p>
+                    BMI, or Body Mass Index, is like a trusty yardstick in the world of health and fitness. It's a
+                    simple
+                    math equation where you divide your weight by the square of your height. The result falls into
+                    categories classified in the image above. This can give you a ballpark idea of how your weight
+                    stacks up
+                    against your height. Note: BMI is handy for a quick health check, but it doesn't replace the need to
+                    visit your doctor for diagnosis. It is merely like the first page of your health story, not the
+                    whole
+                    book.
+                </p>
             </div>
         </div>
+        <footer>
+            <p>Thank you for using my BMI calculator</p>
+            <p>&copy; <span id="year"></span></p>
+        </footer>
 
-        <div class="bmi-information">
-            <img src="/resources/bmi-chart.jpg" alt="">
-            <p>
-                BMI, or Body Mass Index, is like a trusty yardstick in the world of health and fitness. It's a simple
-                math equation where you divide your weight by the square of your height. The result falls into
-                categories classified in the image above. This can give you a ballpark idea of how your weight stacks up
-                against your height. Note: BMI is handy for a quick health check, but it doesn't replace the need to
-                visit your doctor for diagnosis. It is merely like the first page of your health story, not the whole
-                book.
-            </p>
+
+        <div id="modeToggle" class="mode-toggle">
+            <div class="toggle-button-container">
+                <p class="toggle-light" id="toggle-light">
+                    <img src="resources/light_mode.svg" alt="" />
+                </p>
+    
+                <p class="toggle-dark active" id="toggle-dark">
+                    <img src="resources/dark_mode.svg" alt="" />
+                </p>
+            </div>
         </div>
     </div>
-    <footer>
-        <p>Thank you for using my BMI calculator</p>
-        <p>&copy; <span id="year"></span></p>
-    </footer>
 </body>
 
 </html>
